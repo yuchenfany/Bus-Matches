@@ -3,6 +3,7 @@
 This is a 2-part project. 
 
 Part 1: Queue implementation
+
 A queue is a linear structure that adheres to a First In First Out (FIFO) order. Our queue is implemented using LinkedList node structs, and retains private pointers to the head and rear elements. It supports the following main operations:
 
 1. Enqueue: Adds an item to the queue
@@ -13,6 +14,7 @@ A queue is a linear structure that adheres to a First In First Out (FIFO) order.
 Part 2: Bus matches given preference lists
 
 Introduction: 
+
 We are planning a bus trip. We have some number of people who are going to ride the bus.
 The number of people going is an even number. Half of them want to sit on an aisle seat and
 half want to sit in a window seat. These are the only two types of seats.
@@ -28,7 +30,9 @@ We need only come up with pairings: who is sitting next to who. We do not need t
 which row or side of the bus.
 
 Input format: 
+
 The input is formatted in the following fashion:
+
 ● The first line of input is half the number of people who are going for the bus trip.
 
 ● Call that value n for purposes of this format.
@@ -43,5 +47,6 @@ by a space, representing the ith aisle person’s preference list.
 
 
 Implementation Details: 
+
 Our output is a map of matches (key = window person #, value = aisle person #). Starting with a queue of window people, we loop until that queue is empty. For the front of the queue W, we consider the 1st person A in W's pref list who W has not interacted with yet. If A doesn't have a buddy, pair W and A tentatively. If A has a seat buddy but prefers W, pair W and A, and put A's old partner back into the queue. If A prefers the current seat buddy to W, put W back into the queue.
 
