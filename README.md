@@ -30,12 +30,17 @@ which row or side of the bus.
 Input format: 
 The input is formatted in the following fashion:
 ● The first line of input is half the number of people who are going for the bus trip.
+
 ● Call that value n for purposes of this format.
+
 ● The next n lines of input each contain a permutation of integers 1 through n, separated
 by a space. Each line represents the ith window person's pref list. 
+
 ○ The ith line (start counting at 1) contains the preference list for window person #i.
+
 ● The next n lines of input each contain a permutation of integers 1 through n, separated
 by a space, representing the ith aisle person’s preference list.
+
 
 Implementation Details: 
 Our output is a map of matches (key = window person #, value = aisle person #). Starting with a queue of window people, we loop until that queue is empty. For the front of the queue W, we consider the 1st person A in W's pref list who W has not interacted with yet. If A doesn't have a buddy, pair W and A tentatively. If A has a seat buddy but prefers W, pair W and A, and put A's old partner back into the queue. If A prefers the current seat buddy to W, put W back into the queue.
