@@ -9,9 +9,6 @@
 #include <sstream>
 #include <vector>
 
-// This is a demo of the code to show you how to read from istream
-// Please see the assignment description to see the exact format
-// you can expect the input to be.
 std::map<int, int> assignBusSeats(std::istream & in)
 {
 	std::string line;
@@ -117,5 +114,5 @@ std::map<int, int> assignBusSeats(std::istream & in)
 	}
 
 
-	return matches;  // this is obviously a stub and is not what you want.
+	return matches; 
 }
